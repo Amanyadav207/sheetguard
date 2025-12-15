@@ -1,0 +1,383 @@
+2025-12-15 23:13:09 | INFO     | __main__ | ============================================================
+2025-12-15 23:13:09 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:13:09 | INFO     | __main__ | ============================================================
+2025-12-15 23:13:09 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:13:10 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:13:10 | INFO     | __main__ | Database connection established
+2025-12-15 23:13:10 | ERROR    | db.connection | Database error: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (1, 2025-12-15 17:43:12.966276, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:43:12.966276, 0, 0).
+
+2025-12-15 23:13:10 | ERROR    | __main__ | ETL Pipeline failed: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (1, 2025-12-15 17:43:12.966276, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:43:12.966276, 0, 0).
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 80, in run
+    self._create_etl_run_record()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 129, in _create_etl_run_record
+    cursor.execute(query)
+psycopg2.errors.CheckViolation: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (1, 2025-12-15 17:43:12.966276, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:43:12.966276, 0, 0).
+
+2025-12-15 23:13:10 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:13:10 | INFO     | __main__ | ETL run None finalized with status: failed
+2025-12-15 23:13:10 | INFO     | db.connection | Database pool closed
+2025-12-15 23:19:47 | INFO     | __main__ | ============================================================
+2025-12-15 23:19:47 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:19:47 | INFO     | __main__ | ============================================================
+2025-12-15 23:19:47 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:19:47 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:19:48 | INFO     | __main__ | Database connection established
+2025-12-15 23:19:48 | ERROR    | db.connection | Database error: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (2, 2025-12-15 17:49:50.560614, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:49:50.560614, 0, 0).
+
+2025-12-15 23:19:48 | ERROR    | __main__ | ETL Pipeline failed: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (2, 2025-12-15 17:49:50.560614, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:49:50.560614, 0, 0).
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 80, in run
+    self._create_etl_run_record()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 129, in _create_etl_run_record
+    cursor.execute(query)
+psycopg2.errors.CheckViolation: new row for relation "etl_runs" violates check constraint "etl_runs_status_check"
+DETAIL:  Failing row contains (2, 2025-12-15 17:49:50.560614, 0, 0, 0, 0, 0, null, in_progress, null, 2025-12-15 17:49:50.560614, 0, 0).
+
+2025-12-15 23:19:48 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:19:48 | INFO     | __main__ | ETL run None finalized with status: failed
+2025-12-15 23:19:48 | INFO     | db.connection | Database pool closed
+2025-12-15 23:22:12 | INFO     | __main__ | ============================================================
+2025-12-15 23:22:12 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:22:12 | INFO     | __main__ | ============================================================
+2025-12-15 23:22:12 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:22:12 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:22:12 | INFO     | __main__ | Database connection established
+2025-12-15 23:22:12 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:22:12 | INFO     | __main__ | Created ETL run record: 3
+2025-12-15 23:22:12 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:22:12 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:22:12 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:22:12 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:22:12 | INFO     | etl.extract | Extracting data from sheet: Students
+2025-12-15 23:22:13 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:22:13 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:22:14 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:22:14 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:22:15 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/https://docs.google.com/spreadsheets/d/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY/edit?usp=sharing&includeGridData=false HTTP/1.1" 400 None
+2025-12-15 23:22:15 | ERROR    | etl.extract | Failed to extract data from Google Sheets: <!DOCTYPE html><html lang="en"><head><script nonce="pMC6szkfqd7TMmLF9e_anQ">window['ppConfig'] = {productName: '26981ed0d57bbad37e728ff58134270c', deleteIsEnforced:  false , sealIsEnforced:  false , heartbeatRate:  0.5 , periodicReportingRateMillis:  60000.0 , disableAllReporting:  false };(function(){'use strict';function k(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function l(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:k(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}var m=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function n(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var p=n(this);function q(a,b){if(b)a:{var c=p;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&m(c,a,{configurable:!0,writable:!0,value:b})}}
+q("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});q("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});
+q("String.prototype.includes",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(b,c||0)!==-1}});function r(a,b,c){a("https://csp.withgoogle.com/csp/proto/"+encodeURIComponent(b),JSON.stringify(c))}function t(){var a;if((a=window.ppConfig)==null?0:a.disableAllReporting)return function(){};var b,c,d,e;return(e=(b=window)==null?void 0:(c=b.navigator)==null?void 0:(d=c.sendBeacon)==null?void 0:d.bind(navigator))!=null?e:u}function u(a,b){var c=new XMLHttpRequest;c.open("POST",a);c.send(b)}
+function v(){var a=(w=Object.prototype)==null?void 0:w.__lookupGetter__("__proto__"),b=x,c=y;return function(){var d=a.call(this),e,f,g,h;r(c,b,{type:"ACCESS_GET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}
+function z(){var a=(A=Object.prototype)==null?void 0:A.__lookupSetter__("__proto__"),b=x,c=y;return function(d){d=a.call(this,d);var e,f,g,h;r(c,b,{type:"ACCESS_SET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}function B(a,b){C(a.productName,b);setInterval(function(){C(a.productName,b)},a.periodicReportingRateMillis)}
+var D="constructor __defineGetter__ __defineSetter__ hasOwnProperty __lookupGetter__ __lookupSetter__ isPrototypeOf propertyIsEnumerable toString valueOf __proto__ toLocaleString x_ngfn_x".split(" "),E=D.concat,F=navigator.userAgent.match(/Firefox\/([0-9]+)\./),G=(!F||F.length<2?0:Number(F[1])<75)?["toSource"]:[],H;if(G instanceof Array)H=G;else{for(var I=l(G),J,K=[];!(J=I.next()).done;)K.push(J.value);H=K}var L=E.call(D,H),M=[];
+function C(a,b){for(var c=[],d=l(Object.getOwnPropertyNames(Object.prototype)),e=d.next();!e.done;e=d.next())e=e.value,L.includes(e)||M.includes(e)||c.push(e);e=Object.prototype;d=[];for(var f=0;f<c.length;f++){var g=c[f];d[f]={name:g,descriptor:Object.getOwnPropertyDescriptor(Object.prototype,g),type:typeof e[g]}}if(d.length!==0){c=l(d);for(e=c.next();!e.done;e=c.next())M.push(e.value.name);var h;r(b,a,{type:"SEAL",origin:(h=window.location.origin)!=null?h:"unknown",report:{blockers:d}})}};var N=Math.random(),O=t(),P=window.ppConfig;P&&(P.disableAllReporting||P.deleteIsEnforced&&P.sealIsEnforced||N<P.heartbeatRate&&r(O,P.productName,{origin:window.location.origin,type:"HEARTBEAT"}));var y=t(),Q=window.ppConfig;if(Q)if(Q.deleteIsEnforced)delete Object.prototype.__proto__;else if(!Q.disableAllReporting){var x=Q.productName;try{var w,A;Object.defineProperty(Object.prototype,"__proto__",{enumerable:!1,get:v(),set:z()})}catch(a){}}
+(function(){var a=t(),b=window.ppConfig;b&&(b.sealIsEnforced?Object.seal(Object.prototype):b.disableAllReporting||(document.readyState!=="loading"?B(b,a):document.addEventListener("DOMContentLoaded",function(){B(b,a)})))})();}).call(this);
+</script><meta name="description" content="Web word processing, spreadsheets and presentations"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"><link rel="shortcut icon" href="//docs.google.com/favicon.ico"><title>Page not found</title><meta name="referrer" content="origin"><link href="//fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet" type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow"><style nonce="XFyZLfnCDm6ymzx4rZBzow">.goog-inline-block{position:relative;display:-moz-inline-box;display:inline-block}* html .goog-inline-block{display:inline}*:first-child+html .goog-inline-block{display:inline}#drive-logo{margin:18px 0;position:absolute;white-space:nowrap}.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_116x41dp.png);-webkit-background-size:116px 41px;background-size:116px 41px;display:inline-block;height:41px;vertical-align:bottom;width:116px}.docs-drivelogo-text{color:#000;display:inline-block;opacity:.54;text-decoration:none;font-family:"Product Sans",Arial,Helvetica,sans-serif;font-size:32px;text-rendering:optimizeLegibility;position:relative;top:-6px;left:-7px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi){.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png)}}sentinel{}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">body {background-color: #fff; font-family: Arial,sans-serif; font-size: 13px; margin: 0; padding: 0;}a, a:link, a:visited {color: #112ABB;}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">.errorMessage {font-size: 12pt; font-weight: bold; line-height: 150%;}</style></head><body><div id="outerContainer"><div id="innerContainer"><div style="position: absolute; top: -80px;"><div style="margin: 18px 0; position: absolute; white-space: nowrap;"><a href="//support.google.com/docs/"><img height="35px" src="//ssl.gstatic.com/docs/common/product/spreadsheets_lockup2.png" alt="Google logo"/></a></div></div><div align="center"><p class="errorMessage" style="padding-top: 50px">Sorry, unable to open the file at present.</p><p> Please check the address and try again.</p><div style="background: #F0F6FF; border: 1px solid black; margin-top: 35px; padding: 10px 125px; width: 300px;"><p><strong>Get stuff done with Google Drive</strong></p><p>Apps in Google Drive make it easy to create, store and share online documents, spreadsheets, presentations and more.</p><p>Learn more at <a href="https://drive.google.com/start/apps">drive.google.com/start/apps</a>.</p></div></div></div></div></body><style nonce="XFyZLfnCDm6ymzx4rZBzow">html {height: 100%; overflow: auto;}body {height: 100%; overflow: auto;}#outerContainer {margin: auto; max-width: 750px;}#innerContainer {margin-bottom: 20px; margin-left: 40px; margin-right: 40px; margin-top: 80px; position: relative;}</style></html>
+2025-12-15 23:22:15 | ERROR    | __main__ | ETL Pipeline failed: <!DOCTYPE html><html lang="en"><head><script nonce="pMC6szkfqd7TMmLF9e_anQ">window['ppConfig'] = {productName: '26981ed0d57bbad37e728ff58134270c', deleteIsEnforced:  false , sealIsEnforced:  false , heartbeatRate:  0.5 , periodicReportingRateMillis:  60000.0 , disableAllReporting:  false };(function(){'use strict';function k(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function l(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:k(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}var m=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function n(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var p=n(this);function q(a,b){if(b)a:{var c=p;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&m(c,a,{configurable:!0,writable:!0,value:b})}}
+q("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});q("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});
+q("String.prototype.includes",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(b,c||0)!==-1}});function r(a,b,c){a("https://csp.withgoogle.com/csp/proto/"+encodeURIComponent(b),JSON.stringify(c))}function t(){var a;if((a=window.ppConfig)==null?0:a.disableAllReporting)return function(){};var b,c,d,e;return(e=(b=window)==null?void 0:(c=b.navigator)==null?void 0:(d=c.sendBeacon)==null?void 0:d.bind(navigator))!=null?e:u}function u(a,b){var c=new XMLHttpRequest;c.open("POST",a);c.send(b)}
+function v(){var a=(w=Object.prototype)==null?void 0:w.__lookupGetter__("__proto__"),b=x,c=y;return function(){var d=a.call(this),e,f,g,h;r(c,b,{type:"ACCESS_GET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}
+function z(){var a=(A=Object.prototype)==null?void 0:A.__lookupSetter__("__proto__"),b=x,c=y;return function(d){d=a.call(this,d);var e,f,g,h;r(c,b,{type:"ACCESS_SET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}function B(a,b){C(a.productName,b);setInterval(function(){C(a.productName,b)},a.periodicReportingRateMillis)}
+var D="constructor __defineGetter__ __defineSetter__ hasOwnProperty __lookupGetter__ __lookupSetter__ isPrototypeOf propertyIsEnumerable toString valueOf __proto__ toLocaleString x_ngfn_x".split(" "),E=D.concat,F=navigator.userAgent.match(/Firefox\/([0-9]+)\./),G=(!F||F.length<2?0:Number(F[1])<75)?["toSource"]:[],H;if(G instanceof Array)H=G;else{for(var I=l(G),J,K=[];!(J=I.next()).done;)K.push(J.value);H=K}var L=E.call(D,H),M=[];
+function C(a,b){for(var c=[],d=l(Object.getOwnPropertyNames(Object.prototype)),e=d.next();!e.done;e=d.next())e=e.value,L.includes(e)||M.includes(e)||c.push(e);e=Object.prototype;d=[];for(var f=0;f<c.length;f++){var g=c[f];d[f]={name:g,descriptor:Object.getOwnPropertyDescriptor(Object.prototype,g),type:typeof e[g]}}if(d.length!==0){c=l(d);for(e=c.next();!e.done;e=c.next())M.push(e.value.name);var h;r(b,a,{type:"SEAL",origin:(h=window.location.origin)!=null?h:"unknown",report:{blockers:d}})}};var N=Math.random(),O=t(),P=window.ppConfig;P&&(P.disableAllReporting||P.deleteIsEnforced&&P.sealIsEnforced||N<P.heartbeatRate&&r(O,P.productName,{origin:window.location.origin,type:"HEARTBEAT"}));var y=t(),Q=window.ppConfig;if(Q)if(Q.deleteIsEnforced)delete Object.prototype.__proto__;else if(!Q.disableAllReporting){var x=Q.productName;try{var w,A;Object.defineProperty(Object.prototype,"__proto__",{enumerable:!1,get:v(),set:z()})}catch(a){}}
+(function(){var a=t(),b=window.ppConfig;b&&(b.sealIsEnforced?Object.seal(Object.prototype):b.disableAllReporting||(document.readyState!=="loading"?B(b,a):document.addEventListener("DOMContentLoaded",function(){B(b,a)})))})();}).call(this);
+</script><meta name="description" content="Web word processing, spreadsheets and presentations"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"><link rel="shortcut icon" href="//docs.google.com/favicon.ico"><title>Page not found</title><meta name="referrer" content="origin"><link href="//fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet" type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow"><style nonce="XFyZLfnCDm6ymzx4rZBzow">.goog-inline-block{position:relative;display:-moz-inline-box;display:inline-block}* html .goog-inline-block{display:inline}*:first-child+html .goog-inline-block{display:inline}#drive-logo{margin:18px 0;position:absolute;white-space:nowrap}.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_116x41dp.png);-webkit-background-size:116px 41px;background-size:116px 41px;display:inline-block;height:41px;vertical-align:bottom;width:116px}.docs-drivelogo-text{color:#000;display:inline-block;opacity:.54;text-decoration:none;font-family:"Product Sans",Arial,Helvetica,sans-serif;font-size:32px;text-rendering:optimizeLegibility;position:relative;top:-6px;left:-7px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi){.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png)}}sentinel{}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">body {background-color: #fff; font-family: Arial,sans-serif; font-size: 13px; margin: 0; padding: 0;}a, a:link, a:visited {color: #112ABB;}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">.errorMessage {font-size: 12pt; font-weight: bold; line-height: 150%;}</style></head><body><div id="outerContainer"><div id="innerContainer"><div style="position: absolute; top: -80px;"><div style="margin: 18px 0; position: absolute; white-space: nowrap;"><a href="//support.google.com/docs/"><img height="35px" src="//ssl.gstatic.com/docs/common/product/spreadsheets_lockup2.png" alt="Google logo"/></a></div></div><div align="center"><p class="errorMessage" style="padding-top: 50px">Sorry, unable to open the file at present.</p><p> Please check the address and try again.</p><div style="background: #F0F6FF; border: 1px solid black; margin-top: 35px; padding: 10px 125px; width: 300px;"><p><strong>Get stuff done with Google Drive</strong></p><p>Apps in Google Drive make it easy to create, store and share online documents, spreadsheets, presentations and more.</p><p>Learn more at <a href="https://drive.google.com/start/apps">drive.google.com/start/apps</a>.</p></div></div></div></div></body><style nonce="XFyZLfnCDm6ymzx4rZBzow">html {height: 100%; overflow: auto;}body {height: 100%; overflow: auto;}#outerContainer {margin: auto; max-width: 750px;}#innerContainer {margin-bottom: 20px; margin-left: 40px; margin-right: 40px; margin-top: 80px; position: relative;}</style></html>
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 83, in run
+    self._execute_pipeline()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 147, in _execute_pipeline
+    df = fetch_google_sheet(self.settings)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 177, in fetch_google_sheet
+    df = extractor.extract(
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 89, in extract
+    spreadsheet = self.client.open_by_key(sheet_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 213, in open_by_key
+    raise ex
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 207, in open_by_key
+    spreadsheet = Spreadsheet(self, {"id": key})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 37, in __init__
+    metadata = self.fetch_sheet_metadata()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 247, in fetch_sheet_metadata
+    r = self.client.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 94, in request
+    raise APIError(response)
+gspread.exceptions.APIError: <!DOCTYPE html><html lang="en"><head><script nonce="pMC6szkfqd7TMmLF9e_anQ">window['ppConfig'] = {productName: '26981ed0d57bbad37e728ff58134270c', deleteIsEnforced:  false , sealIsEnforced:  false , heartbeatRate:  0.5 , periodicReportingRateMillis:  60000.0 , disableAllReporting:  false };(function(){'use strict';function k(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function l(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:k(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}var m=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function n(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var p=n(this);function q(a,b){if(b)a:{var c=p;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&m(c,a,{configurable:!0,writable:!0,value:b})}}
+q("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});q("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});
+q("String.prototype.includes",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(b,c||0)!==-1}});function r(a,b,c){a("https://csp.withgoogle.com/csp/proto/"+encodeURIComponent(b),JSON.stringify(c))}function t(){var a;if((a=window.ppConfig)==null?0:a.disableAllReporting)return function(){};var b,c,d,e;return(e=(b=window)==null?void 0:(c=b.navigator)==null?void 0:(d=c.sendBeacon)==null?void 0:d.bind(navigator))!=null?e:u}function u(a,b){var c=new XMLHttpRequest;c.open("POST",a);c.send(b)}
+function v(){var a=(w=Object.prototype)==null?void 0:w.__lookupGetter__("__proto__"),b=x,c=y;return function(){var d=a.call(this),e,f,g,h;r(c,b,{type:"ACCESS_GET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}
+function z(){var a=(A=Object.prototype)==null?void 0:A.__lookupSetter__("__proto__"),b=x,c=y;return function(d){d=a.call(this,d);var e,f,g,h;r(c,b,{type:"ACCESS_SET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}function B(a,b){C(a.productName,b);setInterval(function(){C(a.productName,b)},a.periodicReportingRateMillis)}
+var D="constructor __defineGetter__ __defineSetter__ hasOwnProperty __lookupGetter__ __lookupSetter__ isPrototypeOf propertyIsEnumerable toString valueOf __proto__ toLocaleString x_ngfn_x".split(" "),E=D.concat,F=navigator.userAgent.match(/Firefox\/([0-9]+)\./),G=(!F||F.length<2?0:Number(F[1])<75)?["toSource"]:[],H;if(G instanceof Array)H=G;else{for(var I=l(G),J,K=[];!(J=I.next()).done;)K.push(J.value);H=K}var L=E.call(D,H),M=[];
+function C(a,b){for(var c=[],d=l(Object.getOwnPropertyNames(Object.prototype)),e=d.next();!e.done;e=d.next())e=e.value,L.includes(e)||M.includes(e)||c.push(e);e=Object.prototype;d=[];for(var f=0;f<c.length;f++){var g=c[f];d[f]={name:g,descriptor:Object.getOwnPropertyDescriptor(Object.prototype,g),type:typeof e[g]}}if(d.length!==0){c=l(d);for(e=c.next();!e.done;e=c.next())M.push(e.value.name);var h;r(b,a,{type:"SEAL",origin:(h=window.location.origin)!=null?h:"unknown",report:{blockers:d}})}};var N=Math.random(),O=t(),P=window.ppConfig;P&&(P.disableAllReporting||P.deleteIsEnforced&&P.sealIsEnforced||N<P.heartbeatRate&&r(O,P.productName,{origin:window.location.origin,type:"HEARTBEAT"}));var y=t(),Q=window.ppConfig;if(Q)if(Q.deleteIsEnforced)delete Object.prototype.__proto__;else if(!Q.disableAllReporting){var x=Q.productName;try{var w,A;Object.defineProperty(Object.prototype,"__proto__",{enumerable:!1,get:v(),set:z()})}catch(a){}}
+(function(){var a=t(),b=window.ppConfig;b&&(b.sealIsEnforced?Object.seal(Object.prototype):b.disableAllReporting||(document.readyState!=="loading"?B(b,a):document.addEventListener("DOMContentLoaded",function(){B(b,a)})))})();}).call(this);
+</script><meta name="description" content="Web word processing, spreadsheets and presentations"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"><link rel="shortcut icon" href="//docs.google.com/favicon.ico"><title>Page not found</title><meta name="referrer" content="origin"><link href="//fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet" type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow"><style nonce="XFyZLfnCDm6ymzx4rZBzow">.goog-inline-block{position:relative;display:-moz-inline-box;display:inline-block}* html .goog-inline-block{display:inline}*:first-child+html .goog-inline-block{display:inline}#drive-logo{margin:18px 0;position:absolute;white-space:nowrap}.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_116x41dp.png);-webkit-background-size:116px 41px;background-size:116px 41px;display:inline-block;height:41px;vertical-align:bottom;width:116px}.docs-drivelogo-text{color:#000;display:inline-block;opacity:.54;text-decoration:none;font-family:"Product Sans",Arial,Helvetica,sans-serif;font-size:32px;text-rendering:optimizeLegibility;position:relative;top:-6px;left:-7px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi){.docs-drivelogo-img{background-image:url(//ssl.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png)}}sentinel{}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">body {background-color: #fff; font-family: Arial,sans-serif; font-size: 13px; margin: 0; padding: 0;}a, a:link, a:visited {color: #112ABB;}</style><style type="text/css" nonce="XFyZLfnCDm6ymzx4rZBzow">.errorMessage {font-size: 12pt; font-weight: bold; line-height: 150%;}</style></head><body><div id="outerContainer"><div id="innerContainer"><div style="position: absolute; top: -80px;"><div style="margin: 18px 0; position: absolute; white-space: nowrap;"><a href="//support.google.com/docs/"><img height="35px" src="//ssl.gstatic.com/docs/common/product/spreadsheets_lockup2.png" alt="Google logo"/></a></div></div><div align="center"><p class="errorMessage" style="padding-top: 50px">Sorry, unable to open the file at present.</p><p> Please check the address and try again.</p><div style="background: #F0F6FF; border: 1px solid black; margin-top: 35px; padding: 10px 125px; width: 300px;"><p><strong>Get stuff done with Google Drive</strong></p><p>Apps in Google Drive make it easy to create, store and share online documents, spreadsheets, presentations and more.</p><p>Learn more at <a href="https://drive.google.com/start/apps">drive.google.com/start/apps</a>.</p></div></div></div></div></body><style nonce="XFyZLfnCDm6ymzx4rZBzow">html {height: 100%; overflow: auto;}body {height: 100%; overflow: auto;}#outerContainer {margin: auto; max-width: 750px;}#innerContainer {margin-bottom: 20px; margin-left: 40px; margin-right: 40px; margin-top: 80px; position: relative;}</style></html>
+2025-12-15 23:22:16 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:22:16 | INFO     | __main__ | ETL run 3 finalized with status: failed
+2025-12-15 23:22:16 | INFO     | db.connection | Database pool closed
+2025-12-15 23:23:46 | INFO     | __main__ | ============================================================
+2025-12-15 23:23:46 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:23:46 | INFO     | __main__ | ============================================================
+2025-12-15 23:23:46 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:23:46 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:23:46 | INFO     | __main__ | Database connection established
+2025-12-15 23:23:46 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:23:46 | INFO     | __main__ | Created ETL run record: 4
+2025-12-15 23:23:46 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:23:46 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:23:46 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:23:46 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:23:46 | INFO     | etl.extract | Extracting data from sheet: Students
+2025-12-15 23:23:46 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:23:46 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:23:47 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:23:47 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:23:49 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1AbCDEFghIJKlmnOPQRstuVWxyz123456?includeGridData=false HTTP/1.1" 404 None
+2025-12-15 23:23:49 | ERROR    | etl.extract | Spreadsheet not found: 1AbCDEFghIJKlmnOPQRstuVWxyz123456
+2025-12-15 23:23:49 | ERROR    | __main__ | ETL Pipeline failed: <Response [404]>
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 207, in open_by_key
+    spreadsheet = Spreadsheet(self, {"id": key})
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 37, in __init__
+    metadata = self.fetch_sheet_metadata()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 247, in fetch_sheet_metadata
+    r = self.client.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 94, in request
+    raise APIError(response)
+gspread.exceptions.APIError: {'code': 404, 'message': 'Requested entity was not found.', 'status': 'NOT_FOUND'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 83, in run
+    self._execute_pipeline()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 147, in _execute_pipeline
+    df = fetch_google_sheet(self.settings)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 177, in fetch_google_sheet
+    df = extractor.extract(
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 89, in extract
+    spreadsheet = self.client.open_by_key(sheet_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\client.py", line 210, in open_by_key
+    raise SpreadsheetNotFound(ex.response) from ex
+gspread.exceptions.SpreadsheetNotFound: <Response [404]>
+2025-12-15 23:23:49 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:23:49 | INFO     | __main__ | ETL run 4 finalized with status: failed
+2025-12-15 23:23:49 | INFO     | db.connection | Database pool closed
+2025-12-15 23:26:24 | INFO     | __main__ | ============================================================
+2025-12-15 23:26:24 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:26:24 | INFO     | __main__ | ============================================================
+2025-12-15 23:26:24 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:26:24 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:26:24 | INFO     | __main__ | Database connection established
+2025-12-15 23:26:24 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:26:24 | INFO     | __main__ | Created ETL run record: 5
+2025-12-15 23:26:24 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:26:24 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:26:24 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:26:24 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:26:24 | INFO     | etl.extract | Extracting data from sheet: Students
+2025-12-15 23:26:24 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:26:24 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:26:25 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:26:25 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:26:27 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:26:28 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:26:28 | ERROR    | etl.extract | Worksheet 'Students' not found in spreadsheet
+2025-12-15 23:26:28 | ERROR    | __main__ | ETL Pipeline failed: Students
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 343, in worksheet
+    item = finditem(
+           ^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\utils.py", line 140, in finditem
+    return next(item for item in seq if func(item))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 83, in run
+    self._execute_pipeline()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 147, in _execute_pipeline
+    df = fetch_google_sheet(self.settings)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 177, in fetch_google_sheet
+    df = extractor.extract(
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 90, in extract
+    worksheet = spreadsheet.worksheet(sheet_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 349, in worksheet
+    raise WorksheetNotFound(title)
+gspread.exceptions.WorksheetNotFound: Students
+2025-12-15 23:26:28 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:26:28 | INFO     | __main__ | ETL run 5 finalized with status: failed
+2025-12-15 23:26:28 | INFO     | db.connection | Database pool closed
+2025-12-15 23:27:51 | INFO     | __main__ | ============================================================
+2025-12-15 23:27:51 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:27:51 | INFO     | __main__ | ============================================================
+2025-12-15 23:27:51 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:27:51 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:27:51 | INFO     | __main__ | Database connection established
+2025-12-15 23:27:51 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:27:51 | INFO     | __main__ | Created ETL run record: 6
+2025-12-15 23:27:51 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:27:51 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:27:51 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:27:51 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:27:51 | INFO     | etl.extract | Extracting data from sheet: SheetGuard_Test_Data
+2025-12-15 23:27:51 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:27:51 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:27:52 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:27:52 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:27:54 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:27:54 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:27:54 | ERROR    | etl.extract | Worksheet 'SheetGuard_Test_Data' not found in spreadsheet
+2025-12-15 23:27:54 | ERROR    | __main__ | ETL Pipeline failed: SheetGuard_Test_Data
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 343, in worksheet
+    item = finditem(
+           ^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\utils.py", line 140, in finditem
+    return next(item for item in seq if func(item))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 83, in run
+    self._execute_pipeline()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 147, in _execute_pipeline
+    df = fetch_google_sheet(self.settings)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 177, in fetch_google_sheet
+    df = extractor.extract(
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 90, in extract
+    worksheet = spreadsheet.worksheet(sheet_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 349, in worksheet
+    raise WorksheetNotFound(title)
+gspread.exceptions.WorksheetNotFound: SheetGuard_Test_Data
+2025-12-15 23:27:54 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:27:54 | INFO     | __main__ | ETL run 6 finalized with status: failed
+2025-12-15 23:27:54 | INFO     | db.connection | Database pool closed
+2025-12-15 23:28:45 | INFO     | __main__ | ============================================================
+2025-12-15 23:28:45 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:28:45 | INFO     | __main__ | ============================================================
+2025-12-15 23:28:45 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:28:46 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:28:46 | INFO     | __main__ | Database connection established
+2025-12-15 23:28:46 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:28:46 | INFO     | __main__ | Created ETL run record: 7
+2025-12-15 23:28:46 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:28:46 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:28:46 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:28:46 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:28:46 | INFO     | etl.extract | Extracting data from sheet: SheetGuard_Test_Data
+2025-12-15 23:28:46 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:28:47 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:28:48 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:28:48 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:28:49 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:28:49 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:28:49 | ERROR    | etl.extract | Worksheet 'SheetGuard_Test_Data' not found in spreadsheet
+2025-12-15 23:28:49 | ERROR    | __main__ | ETL Pipeline failed: SheetGuard_Test_Data
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 343, in worksheet
+    item = finditem(
+           ^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\utils.py", line 140, in finditem
+    return next(item for item in seq if func(item))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 83, in run
+    self._execute_pipeline()
+  File "D:\Projects\scaler_assignment\etl\run_etl.py", line 147, in _execute_pipeline
+    df = fetch_google_sheet(self.settings)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 177, in fetch_google_sheet
+    df = extractor.extract(
+         ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\etl\extract.py", line 90, in extract
+    worksheet = spreadsheet.worksheet(sheet_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\scaler_assignment\venv\Lib\site-packages\gspread\spreadsheet.py", line 349, in worksheet
+    raise WorksheetNotFound(title)
+gspread.exceptions.WorksheetNotFound: SheetGuard_Test_Data
+2025-12-15 23:28:50 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:28:50 | INFO     | __main__ | ETL run 7 finalized with status: failed
+2025-12-15 23:28:50 | INFO     | db.connection | Database pool closed
+2025-12-15 23:30:29 | INFO     | __main__ | ============================================================
+2025-12-15 23:30:29 | INFO     | __main__ | Starting ETL Pipeline
+2025-12-15 23:30:29 | INFO     | __main__ | ============================================================
+2025-12-15 23:30:29 | INFO     | __main__ | Initializing database connection...
+2025-12-15 23:30:30 | INFO     | db.connection | Database pool initialized with 1-5 connections
+2025-12-15 23:30:30 | INFO     | __main__ | Database connection established
+2025-12-15 23:30:30 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:30 | INFO     | __main__ | Created ETL run record: 8
+2025-12-15 23:30:30 | INFO     | __main__ | Executing ETL pipeline steps...
+2025-12-15 23:30:30 | INFO     | __main__ | Step 1: Extracting data from Google Sheets...
+2025-12-15 23:30:30 | DEBUG    | urllib3.util.retry | Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-12-15 23:30:30 | INFO     | etl.extract | Successfully authenticated with Google Sheets API
+2025-12-15 23:30:30 | INFO     | etl.extract | Extracting data from sheet: Sheet1
+2025-12-15 23:30:30 | DEBUG    | google.auth.transport.requests | Making request: POST https://oauth2.googleapis.com/token
+2025-12-15 23:30:30 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-12-15 23:30:31 | DEBUG    | urllib3.connectionpool | https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-12-15 23:30:31 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): sheets.googleapis.com:443
+2025-12-15 23:30:32 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:30:34 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY?includeGridData=false HTTP/1.1" 200 None
+2025-12-15 23:30:35 | DEBUG    | urllib3.connectionpool | https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1tODmdKU0Sm_mtDgqSRqO99P_-ifknCadVsDtLhmI3RY/values/%27Sheet1%27 HTTP/1.1" 200 None
+2025-12-15 23:30:35 | INFO     | etl.extract | Successfully extracted 5 rows from Sheet1
+2025-12-15 23:30:35 | DEBUG    | etl.extract | Columns: ['name', 'email', 'year', 'department']
+2025-12-15 23:30:35 | INFO     | __main__ | Step 2: Transforming and validating data...
+2025-12-15 23:30:35 | INFO     | etl.transform | Starting transformation of 5 rows
+2025-12-15 23:30:35 | DEBUG    | etl.transform | Converted 5 rows to record dictionaries
+2025-12-15 23:30:35 | WARNING  | etl.transform | Removed 2 duplicate records by email
+2025-12-15 23:30:35 | INFO     | etl.validator | Validation complete: 2 valid, 1 invalid
+2025-12-15 23:30:35 | INFO     | etl.transform | Transformation complete: 2 valid, 1 invalid, 2 duplicates
+2025-12-15 23:30:35 | INFO     | __main__ | Step 3: Loading valid records into database...
+2025-12-15 23:30:35 | INFO     | etl.load | Loading 2 student records
+2025-12-15 23:30:35 | INFO     | etl.load | Ensuring 2 departments exist
+2025-12-15 23:30:36 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:36 | DEBUG    | etl.load | Departments ensured: ME, CSE
+2025-12-15 23:30:36 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:36 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:36 | DEBUG    | etl.load | Batch loaded: 2 inserted, 0 skipped
+2025-12-15 23:30:36 | INFO     | etl.load | Successfully loaded students: 2 inserted, 0 skipped
+2025-12-15 23:30:36 | INFO     | __main__ | Step 4: Loading 1 invalid records to dead-letter queue...
+2025-12-15 23:30:36 | INFO     | etl.load | Loading 1 invalid records to dead-letter queue
+2025-12-15 23:30:36 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:36 | INFO     | etl.load | Loaded 1 invalid records to dead-letter queue
+2025-12-15 23:30:36 | INFO     | __main__ | Pipeline execution completed
+2025-12-15 23:30:36 | DEBUG    | db.connection | Transaction committed successfully
+2025-12-15 23:30:36 | INFO     | __main__ | ETL run 8 finalized with status: success
+2025-12-15 23:30:36 | INFO     | __main__ | ============================================================
+2025-12-15 23:30:36 | INFO     | __main__ | ETL Pipeline Completed Successfully
+2025-12-15 23:30:36 | INFO     | __main__ | ============================================================
+2025-12-15 23:30:36 | INFO     | __main__ | Duration: 6.83 seconds
+2025-12-15 23:30:36 | INFO     | __main__ | Total rows processed: 5
+2025-12-15 23:30:36 | INFO     | __main__ | Valid rows: 2
+2025-12-15 23:30:36 | INFO     | __main__ | Invalid rows: 1
+2025-12-15 23:30:36 | INFO     | __main__ | Duplicate emails detected: 2
+2025-12-15 23:30:36 | INFO     | __main__ | Inserted rows: 2
+2025-12-15 23:30:36 | INFO     | __main__ | Skipped rows (duplicates): 0
+2025-12-15 23:30:36 | INFO     | __main__ | Updated rows: 0
+2025-12-15 23:30:36 | INFO     | __main__ | Data validity rate: 40.00%
+2025-12-15 23:30:36 | INFO     | __main__ | Error rate: 20.00%
+2025-12-15 23:30:36 | INFO     | __main__ | Duplicate rate: 40.00%
+2025-12-15 23:30:36 | INFO     | db.connection | Database pool closed

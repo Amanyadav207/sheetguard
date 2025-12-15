@@ -313,9 +313,3 @@ Logs are written to `logs/etl.log` and console:
 - Increase `BATCH_SIZE` in `.env`
 - Add indexes on frequently filtered columns
 - Monitor database connection pool usage
-
-## License
-
-MIT
-#   s h e e t g u a r d  
- 
